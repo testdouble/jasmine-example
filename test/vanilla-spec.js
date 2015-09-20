@@ -28,6 +28,14 @@ describe('Calculator (Vanilla API)', function(){
     it('starts at zero', function(){
       expect(subject.memoryRecall()).toEqual(0);
     });
-  });
 
+    context('with a number added to it', function(){
+      beforeEach(function(){
+        subject.memoryAdd(5);
+      });
+      it('stores the first number', function(){
+        expect(subject.memoryRecall()).toEqual(5);
+      });
+    });
+  });
 });

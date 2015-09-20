@@ -1,0 +1,23 @@
+{
+  "name": "jasmine-example",
+  "private": true,
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "test": "testem ci",
+    "start": "testem"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/testdouble/jasmine-example.git"
+  },
+  "author": "Justin Searls <searls@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/testdouble/jasmine-example/issues"
+  },
+  "homepage": "https://github.com/testdouble/jasmine-example#readme",
+  "devDependencies": {
+    "coffee-script": "^1.10.0",
+    "testem": "^0.9.5"
+  }
+}

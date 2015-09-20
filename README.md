@@ -11,7 +11,10 @@ This is just a sandbox app for playing with some Jasmine tests, updated for Sept
 running `phantomjs -v`. It should be 1.9 or greater
 * Clone this repository and `cd` into it
 * Run `npm install` and it should exit cleanly
-* Run `npm test` and ensure the tests pass and that it exits cleanly
+
+## Validate installation
+
+Run `npm test` and ensure the tests pass and that it exits cleanly
 
 ## Running the test runner
 

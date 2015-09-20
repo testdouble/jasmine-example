@@ -2,10 +2,18 @@
   "framework": "jasmine2",
   "launch_in_dev": ["Chrome"],
   "launch_in_ci": ["PhantomJS"],
-  "src_files": [
+  "before_tests": "mkdir -p tmp/coffee && $(npm bin)/coffee -o tmp/coffee/ test/",
+  "after_tests": "rm -rf tmp/coffee",
+  "serve_files": [
     "vendor/**/*.js",
     "lib/**/*.js",
     "test/helpers/**/*.js",
-    "test/**/*.js"
+    "test/**/*.js",
+    "tmp/coffee/**/*.js"
+  ],
+  "watch_files": [
+    "vendor/**/*",
+    "lib/**/*",
+    "test/**/*"
   ]
 }

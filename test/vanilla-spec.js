@@ -16,5 +16,11 @@ describe('Math', function(){
 
       expect(result).toEqual(10);
     });
+
+    it('handles some edge cases', function(){
+      expect(subject.add()).toEqual(0);
+      expect(subject.add(5)).toEqual(5);
+      expect(subject.add(-1,-6)).toEqual(-7);
+    });
   });
 });

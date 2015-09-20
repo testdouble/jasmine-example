@@ -1,7 +1,7 @@
-describe('Math', function(){
+describe('Calculator (Vanilla API)', function(){
   var subject, result;
   beforeEach(function(){
-    subject = new Math();
+    subject = new Calculator();
   });
 
   describe('#add', function(){
@@ -23,4 +23,5 @@ describe('Math', function(){
       expect(subject.add(-1,-6)).toEqual(-7);
     });
   });
+
 });

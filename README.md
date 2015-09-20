@@ -1,5 +1,7 @@
 # jasmine-example
 
+[![Build Status](https://travis-ci.org/testdouble/jasmine-example.svg)](https://travis-ci.org/testdouble/jasmine-example)
+
 This is just a sandbox app for playing with some Jasmine tests, updated for September 2015.
 
 ## Prerequisites:

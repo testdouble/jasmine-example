@@ -36,6 +36,18 @@ describe('Calculator (Vanilla API)', function(){
       it('stores the first number', function(){
         expect(subject.memoryRecall()).toEqual(5);
       });
+
+      context('adding two more numbers', function(){
+        beforeEach(function(){
+          result = subject.memoryAdd(6, 9);
+        });
+        it('returns the sum', function() {
+          expect(result).toEqual(20);
+        });
+        it('stores the sum', function(){
+          expect(subject.memoryRecall()).toEqual(20);
+        });
+      });
     });
   });
 });

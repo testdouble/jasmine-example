@@ -24,4 +24,10 @@ describe('Calculator (Vanilla API)', function(){
     });
   });
 
+  describe('#memoryAdd', function(){
+    it('starts at zero', function(){
+      expect(subject.memoryRecall()).toEqual(0);
+    });
+  });
+
 });

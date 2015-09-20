@@ -47,6 +47,18 @@ describe('Calculator (Vanilla API)', function(){
         it('stores the sum', function(){
           expect(subject.memoryRecall()).toEqual(20);
         });
+
+        context('clearing the memory', function(){
+          beforeEach(function(){
+            result = subject.memoryClear();
+          });
+          it('returns zero', function(){
+            expect(result).toEqual(0);
+          });
+          it('stores zero', function(){
+            expect(subject.memoryRecall()).toEqual(0);
+          });
+        });
       });
     });
   });

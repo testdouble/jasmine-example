@@ -1,5 +1,7 @@
 /node_modules
 /tmp
+npm-debug.log
+selenium-debug.log
 
 # Not necessary to lock down
 .node-version

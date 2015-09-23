@@ -32,3 +32,8 @@ You should see a runner like this:
 
 To re-run your tests, either change a watched file, hit the `Return` / `Enter` key, or navigate to Chrome and refresh the test runner page.
 
+## What now?
+
+First, keep a bookmark to this [wiki on testing](https://github.com/testdouble/contributing-tests/wiki) handy. We'll be referencing it a lot.
+
+Second, visit the [issues](https://github.com/testdouble/jasmine-example/issues) page and look through the issues [Open for Voting](https://github.com/testdouble/jasmine-example/labels/Open%20for%20voting). Feel free to :+1: up to 3 topics that you're most interested in, and we'll prioritize our time tackling those ones first! 

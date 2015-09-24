@@ -1,4 +1,4 @@
 picksRandom = require('./picks-random')
 
 module.exports = ->
-  picksRandom(['+','-','*','/'])
+  picksRandom([0..100])

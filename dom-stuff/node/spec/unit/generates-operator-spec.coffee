@@ -2,6 +2,6 @@ describe 'generatesOperator', ->
   Given -> @subject = requireSubject 'lib/generates-operator',
     './picks-random': @picksRandom = td.create('pick')
 
-  Given -> td.when(@picksRandom([0..100])).thenReturn(8)
+  Given -> td.when(@picksRandom(['+','-','*','/'])).thenReturn('*')
   When -> @result = @subject()
-  Then -> @result == 8
+  Then -> @result == '*'

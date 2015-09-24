@@ -1,3 +1,4 @@
 _ = require('lodash')
 
-module.exports = _.pick
+module.exports = (set) ->
+  _.first(_.shuffle(set))

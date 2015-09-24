@@ -1,24 +1,20 @@
-describe "rendering the UI", ->
-  Given -> @$container = affix('.main') #<-- some container for the app
-  Given -> spyOn(JST, 'app/templates/problems.us').andReturn -> "<div>lol</div>"
-  Given -> window.createApplication()
-  # ^ b/c When always runs after ALL givens, change this to a Given so downstream
-  # behavior can rely on it w/o everything becoming a When
-  Then  -> @$container.find('div').text() == "lol"
+describe '.createApplication', ->
+  Given -> spyOn(JST, 'app/templates/problems.us').andReturn("<foo/>")
+  Given -> @$main = affix('.main')
+  Given -> createApplication()
 
-  describe "fetching a new problem", ->
-    Given -> @$button = @$container.affix('button.new-problem')
-    Given -> spyOn($, 'get') #<-- spies record everything, so it has it.
+  Then -> @$main.find('foo').length == 1
+
+  describe 'handling clicks', ->
+    Given -> spyOn($, 'get')
     Given -> @captor = jasmine.captor()
-    When  -> @$button.trigger('click')
-    And   -> expect($.get).toHaveBeenCalledWith('/problem', @captor.capture())
-    # ^ not that this "Then" is now an "And" so the @captor.capture() can affect downstream tests
+    Given -> @$button = @$main.affix('button.new-problem')
+    Given -> @$button.trigger('click')
+    Given -> expect($.get).toHaveBeenCalledWith('/problem', @captor.capture())
 
-    describe "rendering the new problem", ->
-      Given -> @$latestProblem = @$container.affix('.latest-problem')
-      Given -> @problem = description: '1 + 1'
-      # ^ recall that all problems will have a description
-      # I try to keep my test data to a bare minimum to make clear the contract in the code
-      # (e.g. this code doesn't rely on ID, operands, etc. yet)
-      When  -> @captor.value(@problem)
-      Then  -> @$latestProblem.text() == "1 + 1"
+    describe '~ajax callback for new problems', ->
+      Given -> @$latestProblem = @$main.affix('.latest-problem')
+      Given -> @problem = {description: "something"}
+      Given -> @callback = @captor.value
+      When -> @callback(@problem)
+      Then -> @$latestProblem.text() == "something"

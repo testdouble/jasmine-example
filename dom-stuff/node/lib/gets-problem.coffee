@@ -1,6 +1,6 @@
-generatesProblem = require('./generates-problem')
+createsProblem = require('./creates-problem')
 savesProblem = require('./saves-problem')
-presentsProblem = require('./presents-problem')
+describesProblem = require('./describes-problem')
 
 module.exports = ->
-  presentsProblem(savesProblem(generatesProblem()))
+  describesProblem(savesProblem(createsProblem()))

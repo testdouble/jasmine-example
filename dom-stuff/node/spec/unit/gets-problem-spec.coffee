@@ -1,15 +1,14 @@
 describe 'getsProblem', ->
-  Given -> @generatesProblem = jasmine.createSpy('generatesProblem')
-  Given -> @savesProblem = jasmine.createSpy('savesProblem')
-  Given -> @presentsProblem = jasmine.createSpy('presentsProblem')
+  Given -> @createsProblem = td.create('create')
+  Given -> @savesProblem = td.create('save')
+  Given -> @describesProblem = td.create('describe')
   Given -> @subject = requireSubject 'lib/gets-problem',
-    './generates-problem': @generatesProblem
+    './creates-problem': @createsProblem
     './saves-problem': @savesProblem
-    './presents-problem': @presentsProblem
+    './describes-problem': @describesProblem
 
-  describe 'get', ->
-    Given -> @generatesProblem.andReturn("generated problem")
-    Given -> @savesProblem.when("generated problem").thenReturn("saved problem")
-    Given -> @presentsProblem.when("saved problem").thenReturn("problem with description")
-    When -> @result = @subject()
-    Then -> @result == "problem with description"
+  Given -> td.when(@createsProblem()).thenReturn("C")
+  Given -> td.when(@savesProblem("C")).thenReturn("S")
+  Given -> td.when(@describesProblem("S")).thenReturn("D")
+  When -> @result = @subject()
+  Then -> @result == "D"

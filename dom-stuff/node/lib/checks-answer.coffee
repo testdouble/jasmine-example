@@ -1,5 +1,6 @@
 savesProblem = require('./saves-problem')
+solvesProblem = require('./solves-problem')
 
 module.exports = (id, solution) ->
   problem = savesProblem.retrieve(id)
-  problem.operands.left + problem.operands.right == solution
+  solvesProblem(problem) == solution

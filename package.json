@@ -6,7 +6,7 @@
   "scripts": {
     "test": "testem ci --port 17357",
     "start": "testem",
-    "safe": "nightwatch "
+    "safe": "nightwatch"
   },
   "repository": {
     "type": "git",
